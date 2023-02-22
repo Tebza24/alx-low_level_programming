@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-  * print_alphabett - Prints alpahabet in lowecasee.
+  * print_alphabet - Prints alpahabet in lowecasee.
   *
   * Return: Always 0 (success)
   */

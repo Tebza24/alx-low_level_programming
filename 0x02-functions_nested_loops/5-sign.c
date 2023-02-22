@@ -5,7 +5,6 @@
   * greater, equal or less tahn zero.
   *
   * @n: The input number as an interger.
-
   * Return: 1 is greater than zero. 0 is zero.
   * -1 is less than zero.
   */
