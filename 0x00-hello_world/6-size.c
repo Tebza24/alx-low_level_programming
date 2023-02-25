@@ -10,5 +10,8 @@ int main(void)
 	printf("Size of a long int: %d byts(s)\n", sizeof(long int));
 	printf("Size of a long long int: %d byts(s)\n", sizeof(long long int));
 	printf("Size of a float: %d byts(s)\n", sizeof(float));
+	
+	fprintf(stderr, "This is an error messeage.\n");
+
 	return (0);
 }
