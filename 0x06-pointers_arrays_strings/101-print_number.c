@@ -1,26 +1,35 @@
 #include "main.h"
 
 /**
- * print_number - print numbers chars
- * @n: integer params
- * Return: 0
+ * print_number - Prints an integer
+ * @n: The integer to print
+ *
+ * Return: void
  */
-
-void print_number(int n)
+void pri:nt_number(int n)
 {
-	unsigned int n1;
-
-	n1 = n;
+	int digit, copy, size = 1;
 
 	if (n < 0)
+
 	{
-		_putchar('-');
-		n1 = -n;
+	putchar('-');
+	n = -n;
 	}
 
-	if (n1 / 10 != 0)
+	copy = n;
+
+	while (copy / 10)
 	{
-		print_number(n1 / 10);
+		size *= 10;
+		copy /= 10;
 	}
-	_putchar((n1 % 10) + '0');
+
+	while (size)
+	{
+		digit = n / size;
+		putchar(digit + '0');
+		n %= size;
+		size /= 10;
+	}
 }
