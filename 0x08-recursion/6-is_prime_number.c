@@ -1,30 +1,32 @@
 #include "main.h"
 
+int actual_prime(int n, int i);
+
 /**
- * wildcmp - Compare strings
- * @s1: pointer to string params
- * @s2: pointer to string params
- * Return: 0
+ * is_prime_number - says if an integer is a prime number or not
+ * @n: number to evaluate
+ *
+ * Return: 1 if n is a prime number, 0 if not
  */
-
-int wildcmp(char *s1, char *s2)
+int is_prime_number(int n)
 {
-	if (*s1 == '\0')
-	{
-		if (*s2 != '\0' && *s2 == '*')
-		{
-			return (wildcmp(s1, s2 + 1));
-		}
-		return (*s2 == '\0');
-	}
+	if (n <= 1)
+		return (0);
+	return (actual_prime(n, n - 1));
+}
 
-	if (*s2 == '*')
-	{
-		return (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1));
-	}
-	else if (*s1 == *s2)
-	{
-		return (wildcmp(s1 + 1, s2 + 1));
-	}
-	return (0);
+/**
+ * actual_prime - calculates if a number is prime recursively
+ * @n: number to evaluate
+ * @i: iterator
+ *
+ * Return: 1 if n is prime, 0 if not
+ */
+int actual_prime(int n, int i)
+{
+	if (i == 1)
+		return (1);
+	if (n % i == 0 && i > 0)
+		return (0);
+	return (actual_prime(n, i - 1));
 }
